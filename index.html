@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-BR" class="scroll-smooth">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -66,31 +66,69 @@
     </div>
 
     <!-- Navegação Rápida (Âncoras) -->
-    <nav class="grid grid-cols-4 gap-2 text-center text-xs">
-      <a href="#checkin" class="bg-white border border-slate-200 rounded-xl p-3 hover:border-rose-400 transition shadow-sm">
-        <i class="fa-solid fa-key text-airbnb text-lg mb-1 block"></i>
+    <nav class="grid grid-cols-5 gap-1.5 text-center text-[11px]">
+      <a href="#checkin" class="bg-white border border-slate-200 rounded-xl p-2.5 hover:border-rose-400 transition shadow-sm active:scale-95">
+        <i class="fa-solid fa-key text-airbnb text-base mb-1 block"></i>
         <span>Check-in</span>
       </a>
-      <a href="#regras" class="bg-white border border-slate-200 rounded-xl p-3 hover:border-rose-400 transition shadow-sm">
-        <i class="fa-solid fa-clipboard-list text-airbnb text-lg mb-1 block"></i>
+      <a href="#geral" class="bg-white border border-slate-200 rounded-xl p-2.5 hover:border-rose-400 transition shadow-sm active:scale-95">
+        <i class="fa-solid fa-circle-info text-airbnb text-base mb-1 block"></i>
+        <span>Geral</span>
+      </a>
+      <a href="#regras" class="bg-white border border-slate-200 rounded-xl p-2.5 hover:border-rose-400 transition shadow-sm active:scale-95">
+        <i class="fa-solid fa-clipboard-list text-airbnb text-base mb-1 block"></i>
         <span>Regras</span>
       </a>
-      <a href="#aparelhos" class="bg-white border border-slate-200 rounded-xl p-3 hover:border-rose-400 transition shadow-sm">
-        <i class="fa-solid fa-tv text-airbnb text-lg mb-1 block"></i>
+      <a href="#aparelhos" class="bg-white border border-slate-200 rounded-xl p-2.5 hover:border-rose-400 transition shadow-sm active:scale-95">
+        <i class="fa-solid fa-sliders text-airbnb text-base mb-1 block"></i>
         <span>Aparelhos</span>
       </a>
-      <a href="#dicas" class="bg-white border border-slate-200 rounded-xl p-3 hover:border-rose-400 transition shadow-sm">
-        <i class="fa-solid fa-map-location-dot text-airbnb text-lg mb-1 block"></i>
+      <a href="#dicas" class="bg-white border border-slate-200 rounded-xl p-2.5 hover:border-rose-400 transition shadow-sm active:scale-95">
+        <i class="fa-solid fa-map-location-dot text-airbnb text-base mb-1 block"></i>
         <span>Dicas</span>
       </a>
     </nav>
 
+    <!-- Seção: Informações Gerais -->
+    <section id="geral" class="bg-white rounded-2xl p-5 border border-slate-200 shadow-sm space-y-3">
+      <div class="flex items-center gap-2 text-slate-900 font-bold">
+        <i class="fa-solid fa-circle-info text-airbnb"></i>
+        <h3>Informações Gerais</h3>
+      </div>
+
+      <div class="space-y-2.5">
+        <!-- Roupas de Cama e Banho -->
+        <div class="flex items-start gap-3 p-3 rounded-xl bg-slate-50 border border-slate-100">
+          <div class="w-8 h-8 rounded-full bg-rose-50 text-airbnb flex items-center justify-center text-sm shrink-0 mt-0.5">
+            <i class="fa-solid fa-bed"></i>
+          </div>
+          <div class="text-xs text-slate-600 leading-relaxed">
+            <strong class="text-slate-800 block mb-0.5 text-sm">Cama & Banho:</strong>
+            Disponibilizamos roupa de cama limpa, toalhas de banho, sabonete e papel higiênico para a sua estadia.
+          </div>
+        </div>
+
+        <!-- Cozinha e Utensílios -->
+        <div class="flex items-start gap-3 p-3 rounded-xl bg-slate-50 border border-slate-100">
+          <div class="w-8 h-8 rounded-full bg-amber-50 text-amber-600 flex items-center justify-center text-sm shrink-0 mt-0.5">
+            <i class="fa-solid fa-utensils"></i>
+          </div>
+          <div class="text-xs text-slate-600 leading-relaxed">
+            <strong class="text-slate-800 block mb-0.5 text-sm">Itens da Cozinha:</strong>
+            A cozinha está equipada com panelas, pratos, copos, talheres, sanduicheira, garrafa de café, fogão e geladeira prontos para uso.
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- Seção: Check-in & Check-out -->
-    <section id="checkin" class="bg-white rounded-2xl p-5 border border-slate-200 shadow-sm space-y-3">
+    <section id="checkin" class="bg-white rounded-2xl p-5 border border-slate-200 shadow-sm space-y-3.5">
       <div class="flex items-center gap-2 text-slate-900 font-bold">
         <i class="fa-solid fa-door-open text-airbnb"></i>
         <h3>Entrada & Saída</h3>
       </div>
+
+      <!-- Horários -->
       <div class="grid grid-cols-2 gap-3 text-sm">
         <div class="bg-slate-50 p-3 rounded-xl border border-slate-100">
           <span class="text-xs text-slate-500 font-medium block">Check-in</span>
@@ -101,10 +139,72 @@
           <span class="font-bold text-slate-900">Até as 12:00</span>
         </div>
       </div>
-      <div class="bg-amber-50 text-amber-900 text-xs p-3 rounded-xl border border-amber-200">
-        <p class="font-semibold mb-1"><i class="fa-solid fa-lock mr-1"></i> Fechadura Eletrônica:</p>
-        <p>Digite a senha seguida da tecla <strong>V</strong> para destrancar. Ao sair, a porta se tranca sozinha</p>
+
+      <!-- Aviso Check-in Presencial -->
+      <div class="bg-sky-50 text-sky-900 text-xs p-3.5 rounded-xl border border-sky-200/80 flex items-start gap-2.5">
+        <i class="fa-solid fa-handshake text-sky-600 text-sm mt-0.5 shrink-0"></i>
+        <div>
+          <strong class="font-semibold block mb-0.5">Check-in Presencial:</strong>
+          <span>Nosso check-in é realizado pessoalmente por nós ou por alguém de confiança. Pedimos a gentileza de nos informar sua previsão de horário de chegada assim que possível.</span>
+        </div>
       </div>
+
+      <!-- Fechadura Eletrônica -->
+      <div class="bg-amber-50 text-amber-900 text-xs p-3.5 rounded-xl border border-amber-200/80">
+        <p class="font-semibold mb-1"><i class="fa-solid fa-lock mr-1"></i> Fechadura Eletrônica:</p>
+        <p>Digite a senha seguida da tecla <strong>V</strong> para destrancar. Ao fechar a porta ao sair, ela se tranca de forma automática.</p>
+      </div>
+
+      <!-- Instruções de Check-out (Expansível) -->
+      <details class="group bg-slate-50 rounded-xl border border-slate-200/80 overflow-hidden transition-all duration-200">
+        <summary class="flex items-center justify-between p-3.5 cursor-pointer list-none select-none hover:bg-slate-100/70 transition">
+          <div class="flex items-center gap-2 font-semibold text-slate-800 text-sm">
+            <i class="fa-solid fa-clipboard-check text-airbnb"></i>
+            <span>Instruções de Check-out</span>
+          </div>
+          <i class="fa-solid fa-chevron-down text-xs text-slate-400 group-open:rotate-180 transition-transform duration-200"></i>
+        </summary>
+        
+        <div class="px-3.5 pb-3.5 pt-2 border-t border-slate-100 space-y-3.5 text-xs text-slate-600 bg-white">
+          
+          <!-- Opção: Com Veículo -->
+          <div class="space-y-1.5 p-3 rounded-lg bg-slate-50 border border-slate-100">
+            <div class="flex items-center gap-1.5 font-bold text-slate-800 text-xs">
+              <i class="fa-solid fa-car text-rose-500"></i>
+              <span>Check-out COM veículo</span>
+            </div>
+            <ol class="list-decimal list-inside space-y-1 pl-1 text-slate-600">
+              <li>Tirar o carro da garagem.</li>
+              <li>Voltar no apartamento e guardar o <strong>controle do portão</strong> e a <strong>TAG</strong> dentro do apartamento.</li>
+              <li>
+                Sair pelo portão de pedestres do <strong>nº 80</strong>. Basta apertar o botão do lado direito do portão de pedestres 
+                <a href="#" target="_blank" class="text-airbnb font-semibold hover:underline inline-flex items-center gap-0.5">
+                  (ver vídeo <i class="fa-solid fa-arrow-up-right-from-square text-[9px]"></i>)
+                </a>.
+              </li>
+            </ol>
+          </div>
+
+          <!-- Opção: Sem Veículo -->
+          <div class="space-y-1.5 p-3 rounded-lg bg-slate-50 border border-slate-100">
+            <div class="flex items-center gap-1.5 font-bold text-slate-800 text-xs">
+              <i class="fa-solid fa-person-walking text-blue-500"></i>
+              <span>Check-out SEM veículo</span>
+            </div>
+            <ol class="list-decimal list-inside space-y-1 pl-1 text-slate-600">
+              <li>Deixar a <strong>TAG</strong> dentro do apartamento.</li>
+              <li>
+                Sair pelo portão de pedestres do <strong>nº 80</strong>. Basta apertar o botão do lado direito do portão de pedestres 
+                <a href="#" target="_blank" class="text-airbnb font-semibold hover:underline inline-flex items-center gap-0.5">
+                  (ver vídeo <i class="fa-solid fa-arrow-up-right-from-square text-[9px]"></i>)
+                </a>.
+              </li>
+            </ol>
+          </div>
+
+        </div>
+      </details>
+
     </section>
 
     <!-- Seção: Uso de Aparelhos -->
