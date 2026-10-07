@@ -1,29 +1,221 @@
-name: Deploy GitHub Pages
-on:
-  push:
-    branches: ['main']
-permissions:
-  contents: read
-  pages: write
-  id-token: write
-concurrency:
-  group: 'pages'
-  cancel-in-progress: true
-jobs:
-  deploy:
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
-        with:
-          node-version: 20
-      - run: npm ci
-      - run: npm run build
-      - uses: actions/upload-pages-artifact@v3
-        with:
-          path: ./dist
-      - id: deployment
-        uses: actions/deploy-pages@v4
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Guia do Hóspede | Manual da Casa</title>
+  <!-- Tailwind CSS via CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Font Awesome para ícones -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            airbnb: '#FF385C'
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-slate-50 text-slate-800 antialiased min-h-screen pb-16">
+
+  <!-- Header / Hero -->
+  <header class="bg-white border-b border-slate-200 sticky top-0 z-30 shadow-sm">
+    <div class="max-w-xl mx-auto px-4 py-3 flex items-center justify-between">
+      <div class="flex items-center gap-2">
+        <i class="fa-solid fa-house-chimney text-airbnb text-xl"></i>
+        <h1 class="font-bold text-lg text-slate-900">Manual da Casa</h1>
+      </div>
+      <a href="https://wa.me/5500000000000?text=Olá!%20Sou%20hóspede%20e%20preciso%20de%20ajuda" 
+         target="_blank" 
+         class="bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-semibold px-3 py-1.5 rounded-full flex items-center gap-1.5 transition">
+        <i class="fa-brands fa-whatsapp text-sm"></i> Falar com Host
+      </a>
+    </div>
+  </header>
+
+  <main class="max-w-xl mx-auto px-4 pt-4 space-y-4">
+
+    <!-- Card de Boas-Vindas & Wi-Fi -->
+    <div class="bg-gradient-to-br from-rose-500 to-rose-600 rounded-2xl p-5 text-white shadow-md">
+      <span class="text-xs font-semibold tracking-wider uppercase opacity-90">Bem-vindo(a)!</span>
+      <h2 class="text-xl font-bold mt-1 mb-4">Apartamento 101</h2>
+
+      <!-- Box Wi-Fi com Copiar Senha -->
+      <div class="bg-white/15 backdrop-blur-sm rounded-xl p-3.5 border border-white/20 space-y-2">
+        <div class="flex justify-between items-center text-sm">
+          <span class="opacity-90"><i class="fa-solid fa-wifi mr-1.5"></i> Rede:</span>
+          <span class="font-semibold" id="wifi-ssid">Apartamento_Hospedes_5G</span>
+        </div>
+        <div class="flex justify-between items-center text-sm pt-1 border-t border-white/20">
+          <span class="opacity-90"><i class="fa-solid fa-key mr-1.5"></i> Senha:</span>
+          <div class="flex items-center gap-2">
+            <code class="font-mono bg-black/20 px-2 py-0.5 rounded text-xs" id="wifi-pass">hospede1234</code>
+            <button onclick="copiarSenha()" class="bg-white text-rose-600 text-xs px-2 py-1 rounded font-medium hover:bg-rose-50 transition active:scale-95">
+              Copiar
+            </button>
+          </div>
+        </div>
+      </div>
+      <p id="toast-copiado" class="text-xs text-center text-emerald-200 mt-2 font-medium hidden">
+        ✓ Senha copiada com sucesso!
+      </p>
+    </div>
+
+    <!-- Navegação Rápida (Âncoras) -->
+    <nav class="grid grid-cols-4 gap-2 text-center text-xs">
+      <a href="#checkin" class="bg-white border border-slate-200 rounded-xl p-3 hover:border-rose-400 transition shadow-sm">
+        <i class="fa-solid fa-key text-airbnb text-lg mb-1 block"></i>
+        <span>Check-in</span>
+      </a>
+      <a href="#regras" class="bg-white border border-slate-200 rounded-xl p-3 hover:border-rose-400 transition shadow-sm">
+        <i class="fa-solid fa-clipboard-list text-airbnb text-lg mb-1 block"></i>
+        <span>Regras</span>
+      </a>
+      <a href="#aparelhos" class="bg-white border border-slate-200 rounded-xl p-3 hover:border-rose-400 transition shadow-sm">
+        <i class="fa-solid fa-tv text-airbnb text-lg mb-1 block"></i>
+        <span>Aparelhos</span>
+      </a>
+      <a href="#dicas" class="bg-white border border-slate-200 rounded-xl p-3 hover:border-rose-400 transition shadow-sm">
+        <i class="fa-solid fa-map-location-dot text-airbnb text-lg mb-1 block"></i>
+        <span>Dicas</span>
+      </a>
+    </nav>
+
+    <!-- Seção: Check-in & Check-out -->
+    <section id="checkin" class="bg-white rounded-2xl p-5 border border-slate-200 shadow-sm space-y-3">
+      <div class="flex items-center gap-2 text-slate-900 font-bold">
+        <i class="fa-solid fa-door-open text-airbnb"></i>
+        <h3>Entrada & Saída</h3>
+      </div>
+      <div class="grid grid-cols-2 gap-3 text-sm">
+        <div class="bg-slate-50 p-3 rounded-xl border border-slate-100">
+          <span class="text-xs text-slate-500 font-medium block">Check-in</span>
+          <span class="font-bold text-slate-900">A partir das 14:00</span>
+        </div>
+        <div class="bg-slate-50 p-3 rounded-xl border border-slate-100">
+          <span class="text-xs text-slate-500 font-medium block">Check-out</span>
+          <span class="font-bold text-slate-900">Até as 11:00</span>
+        </div>
+      </div>
+      <div class="bg-amber-50 text-amber-900 text-xs p-3 rounded-xl border border-amber-200">
+        <p class="font-semibold mb-1"><i class="fa-solid fa-lock mr-1"></i> Fechadura Eletrônica:</p>
+        <p>Digite a senha seguida da tecla <strong>*</strong> ou <strong>#</strong> para destrancar. Ao sair, apenas aperte o botão de cadeado.</p>
+      </div>
+    </section>
+
+    <!-- Seção: Uso de Aparelhos -->
+    <section id="aparelhos" class="bg-white rounded-2xl p-5 border border-slate-200 shadow-sm space-y-3">
+      <div class="flex items-center gap-2 text-slate-900 font-bold">
+        <i class="fa-solid fa-sliders text-airbnb"></i>
+        <h3>Aparelhos da Casa</h3>
+      </div>
+      <div class="space-y-2 text-sm text-slate-600">
+        <details class="group bg-slate-50 p-3 rounded-xl border border-slate-100">
+          <summary class="font-semibold text-slate-800 cursor-pointer list-none flex justify-between items-center">
+            <span><i class="fa-solid fa-snowflake mr-2 text-sky-500"></i>Ar-Condicionado</span>
+            <i class="fa-solid fa-chevron-down text-xs text-slate-400 group-open:rotate-180 transition"></i>
+          </summary>
+          <p class="mt-2 text-xs text-slate-600 leading-relaxed">
+            Mantenha portas e janelas fechadas durante o uso. Ao sair do imóvel, por favor, desligue o aparelho. O controle fica no suporte ao lado da cama.
+          </p>
+        </details>
+        <details class="group bg-slate-50 p-3 rounded-xl border border-slate-100">
+          <summary class="font-semibold text-slate-800 cursor-pointer list-none flex justify-between items-center">
+            <span><i class="fa-solid fa-shower mr-2 text-amber-500"></i>Chuveiro & Aquecedor</span>
+            <i class="fa-solid fa-chevron-down text-xs text-slate-400 group-open:rotate-180 transition"></i>
+          </summary>
+          <p class="mt-2 text-xs text-slate-600 leading-relaxed">
+            Aquecimento a gás. Abra primeiro o registro da água quente (esquerda) e regule com a água fria (direita). O aquecedor liga de forma automática.
+          </p>
+        </details>
+        <details class="group bg-slate-50 p-3 rounded-xl border border-slate-100">
+          <summary class="font-semibold text-slate-800 cursor-pointer list-none flex justify-between items-center">
+            <span><i class="fa-solid fa-trash-can mr-2 text-emerald-500"></i>Descarte de Lixo</span>
+            <i class="fa-solid fa-chevron-down text-xs text-slate-400 group-open:rotate-180 transition"></i>
+          </summary>
+          <p class="mt-2 text-xs text-slate-600 leading-relaxed">
+            A lixeira principal do prédio fica no subsolo (garagem). Sacos extras estão sob a pia da cozinha.
+          </p>
+        </details>
+      </div>
+    </section>
+
+    <!-- Seção: Regras da Casa -->
+    <section id="regras" class="bg-white rounded-2xl p-5 border border-slate-200 shadow-sm space-y-3">
+      <div class="flex items-center gap-2 text-slate-900 font-bold">
+        <i class="fa-solid fa-circle-exclamation text-airbnb"></i>
+        <h3>Regras Importantes</h3>
+      </div>
+      <ul class="text-xs text-slate-600 space-y-2">
+        <li class="flex items-start gap-2">
+          <i class="fa-solid fa-ban text-rose-500 mt-0.5"></i>
+          <span><strong>Não fumar:</strong> Estritamente proibido fumar dentro do apartamento ou na sacada.</span>
+        </li>
+        <li class="flex items-start gap-2">
+          <i class="fa-solid fa-volume-xmark text-rose-500 mt-0.5"></i>
+          <span><strong>Horário de silêncio:</strong> Das 22:00 às 08:00 (lei do condomínio).</span>
+        </li>
+        <li class="flex items-start gap-2">
+          <i class="fa-solid fa-users text-rose-500 mt-0.5"></i>
+          <span><strong>Visitas:</strong> Apenas hóspedes cadastrados na reserva têm acesso ao condomínio.</span>
+        </li>
+      </ul>
+    </section>
+
+    <!-- Seção: Dicas Locais & Links Externos -->
+    <section id="dicas" class="bg-white rounded-2xl p-5 border border-slate-200 shadow-sm space-y-3">
+      <div class="flex items-center gap-2 text-slate-900 font-bold">
+        <i class="fa-solid fa-location-dot text-airbnb"></i>
+        <h3>Dicas na Região</h3>
+      </div>
+      <div class="space-y-2">
+        <a href="https://maps.google.com/?q=Padaria" target="_blank" 
+           class="flex items-center justify-between p-3 rounded-xl bg-slate-50 hover:bg-slate-100 transition border border-slate-100 group">
+          <div class="flex items-center gap-3">
+            <div class="w-8 h-8 rounded-full bg-amber-100 text-amber-700 flex items-center justify-center text-sm">
+              <i class="fa-solid fa-bread-slice"></i>
+            </div>
+            <div>
+              <p class="text-sm font-semibold text-slate-800">Padaria da Esquina</p>
+              <p class="text-xs text-slate-500">Ótimo café da manhã (2 min a pé)</p>
+            </div>
+          </div>
+          <i class="fa-solid fa-arrow-up-right-from-square text-xs text-slate-400 group-hover:text-rose-500 transition"></i>
+        </a>
+
+        <a href="https://maps.google.com/?q=Supermercado" target="_blank" 
+           class="flex items-center justify-between p-3 rounded-xl bg-slate-50 hover:bg-slate-100 transition border border-slate-100 group">
+          <div class="flex items-center gap-3">
+            <div class="w-8 h-8 rounded-full bg-emerald-100 text-emerald-700 flex items-center justify-center text-sm">
+              <i class="fa-solid fa-basket-shopping"></i>
+            </div>
+            <div>
+              <p class="text-sm font-semibold text-slate-800">Supermercado Local</p>
+              <p class="text-xs text-slate-500">Aberto até às 22h (300m)</p>
+            </div>
+          </div>
+          <i class="fa-solid fa-arrow-up-right-from-square text-xs text-slate-400 group-hover:text-rose-500 transition"></i>
+        </a>
+      </div>
+    </section>
+
+  </main>
+
+  <script>
+    function copiarSenha() {
+      const senha = document.getElementById('wifi-pass').innerText;
+      navigator.clipboard.writeText(senha).then(() => {
+        const toast = document.getElementById('toast-copiado');
+        toast.classList.remove('hidden');
+        setTimeout(() => {
+          toast.classList.add('hidden');
+        }, 2500);
+      });
+    }
+  </script>
+</body>
+</html>
