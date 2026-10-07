@@ -164,183 +164,271 @@
         <h3>Dicas na Região</h3>
       </div>
       
-      <div class="space-y-3">
+      <div class="space-y-2">
 
         <!-- 1. Padaria dos Rocha -->
-        <a href="https://maps.app.goo.gl/CDwLaUmaLyP3Ep4P9" target="_blank" 
-           class="flex items-center gap-3 p-2.5 rounded-xl bg-slate-50 hover:bg-slate-100 transition border border-slate-100 group">
-          <img src="https://images.unsplash.com/photo-1509440159596-0249088772ff?w=160&auto=format&fit=crop&q=80" 
-               alt="Padaria dos Rocha" class="w-16 h-16 rounded-lg object-cover shrink-0 shadow-sm">
-          <div class="min-w-0 flex-1">
-            <div class="flex items-center justify-between gap-1 mb-0.5">
+        <details class="group bg-slate-50 rounded-xl border border-slate-200/80 overflow-hidden transition-all duration-200">
+          <summary class="flex items-center justify-between p-3 cursor-pointer list-none select-none hover:bg-slate-100/70 transition">
+            <div class="flex items-center gap-2.5 min-w-0">
+              <img src="https://images.unsplash.com/photo-1509440159596-0249088772ff?w=100&auto=format&fit=crop&q=80" 
+                   alt="Padaria dos Rocha" class="w-8 h-8 rounded-lg object-cover shrink-0 shadow-xs">
               <p class="text-sm font-semibold text-slate-800 truncate">Padaria dos Rocha</p>
-              <span class="bg-rose-50 text-rose-700 border border-rose-200/60 font-semibold text-[10px] px-1.5 py-0.5 rounded-full shrink-0">320m</span>
             </div>
-            <p class="text-xs text-slate-500 line-clamp-1">Padaria mais próxima</p>
-            <p class="text-[11px] text-slate-600 mt-1"><i class="fa-regular fa-clock mr-1 text-slate-400"></i>06:00 às 20:00</p>
+            <div class="flex items-center gap-2 shrink-0 ml-2">
+              <span class="bg-rose-50 text-rose-700 border border-rose-200/60 font-semibold text-[10px] px-1.5 py-0.5 rounded-full">320m</span>
+              <i class="fa-solid fa-chevron-down text-xs text-slate-400 group-open:rotate-180 transition-transform duration-200"></i>
+            </div>
+          </summary>
+          <div class="px-3 pb-3 pt-1 border-t border-slate-100 space-y-2 text-xs text-slate-600 bg-white">
+            <p>Opção de padaria mais próxima da acomodação (cerca de 4 minutos a pé).</p>
+            <p class="text-[11px] text-slate-500"><i class="fa-regular fa-clock mr-1 text-slate-400"></i>Horário: 06:00 às 20:00</p>
+            <a href="https://maps.app.goo.gl/CDwLaUmaLyP3Ep4P9" target="_blank" 
+               class="inline-flex items-center gap-1.5 text-airbnb font-semibold hover:underline pt-1">
+              <span>Abrir no Google Maps</span>
+              <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+            </a>
           </div>
-          <i class="fa-solid fa-arrow-up-right-from-square text-xs text-slate-400 group-hover:text-rose-500 transition mr-1"></i>
-        </a>
+        </details>
 
         <!-- 2. Farmácia -->
-        <a href="https://maps.app.goo.gl/7a7FmUtRmZTmWa8E6" target="_blank" 
-           class="flex items-center gap-3 p-2.5 rounded-xl bg-slate-50 hover:bg-slate-100 transition border border-slate-100 group">
-          <img src="https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?w=160&auto=format&fit=crop&q=80" 
-               alt="Farmácia" class="w-16 h-16 rounded-lg object-cover shrink-0 shadow-sm">
-          <div class="min-w-0 flex-1">
-            <div class="flex items-center justify-between gap-1 mb-0.5">
-              <p class="text-sm font-semibold text-slate-800 truncate">Farmácia - DrogaRaia</p>
-              <span class="bg-rose-50 text-rose-700 border border-rose-200/60 font-semibold text-[10px] px-1.5 py-0.5 rounded-full shrink-0">350m</span>
+        <details class="group bg-slate-50 rounded-xl border border-slate-200/80 overflow-hidden transition-all duration-200">
+          <summary class="flex items-center justify-between p-3 cursor-pointer list-none select-none hover:bg-slate-100/70 transition">
+            <div class="flex items-center gap-2.5 min-w-0">
+              <img src="https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?w=100&auto=format&fit=crop&q=80" 
+                   alt="Farmácia" class="w-8 h-8 rounded-lg object-cover shrink-0 shadow-xs">
+              <p class="text-sm font-semibold text-slate-800 truncate">Farmácia - Droga Raia</p>
             </div>
-            <p class="text-xs text-slate-500 line-clamp-1">Medicamentos e conveniência</p>
-            <p class="text-[11px] text-slate-600 mt-1"><i class="fa-regular fa-clock mr-1 text-slate-400"></i>07:00 às 22:00</p>
+            <div class="flex items-center gap-2 shrink-0 ml-2">
+              <span class="bg-rose-50 text-rose-700 border border-rose-200/60 font-semibold text-[10px] px-1.5 py-0.5 rounded-full">350m</span>
+              <i class="fa-solid fa-chevron-down text-xs text-slate-400 group-open:rotate-180 transition-transform duration-200"></i>
+            </div>
+          </summary>
+          <div class="px-3 pb-3 pt-1 border-t border-slate-100 space-y-2 text-xs text-slate-600 bg-white">
+            <p>Medicamentos, itens de primeiros socorros, perfumaria e conveniência.</p>
+            <p class="text-[11px] text-slate-500"><i class="fa-regular fa-clock mr-1 text-slate-400"></i>Horário: 07:00 às 22:00</p>
+            <a href="https://maps.app.goo.gl/7a7FmUtRmZTmWa8E6" target="_blank" 
+               class="inline-flex items-center gap-1.5 text-airbnb font-semibold hover:underline pt-1">
+              <span>Abrir no Google Maps</span>
+              <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+            </a>
           </div>
-          <i class="fa-solid fa-arrow-up-right-from-square text-xs text-slate-400 group-hover:text-rose-500 transition mr-1"></i>
-        </a>
+        </details>
 
         <!-- 3. Hortifruti -->
-        <a href="https://maps.app.goo.gl/oCsu9PDg2yxsFX9U6" target="_blank" 
-           class="flex items-center gap-3 p-2.5 rounded-xl bg-slate-50 hover:bg-slate-100 transition border border-slate-100 group">
-          <img src="https://images.unsplash.com/photo-1610832958506-aa56368176cf?w=160&auto=format&fit=crop&q=80" 
-               alt="Hortifruti" class="w-16 h-16 rounded-lg object-cover shrink-0 shadow-sm">
-          <div class="min-w-0 flex-1">
-            <div class="flex items-center justify-between gap-1 mb-0.5">
+        <details class="group bg-slate-50 rounded-xl border border-slate-200/80 overflow-hidden transition-all duration-200">
+          <summary class="flex items-center justify-between p-3 cursor-pointer list-none select-none hover:bg-slate-100/70 transition">
+            <div class="flex items-center gap-2.5 min-w-0">
+              <img src="https://images.unsplash.com/photo-1610832958506-aa56368176cf?w=100&auto=format&fit=crop&q=80" 
+                   alt="Hortifruti" class="w-8 h-8 rounded-lg object-cover shrink-0 shadow-xs">
               <p class="text-sm font-semibold text-slate-800 truncate">Hortifruti - Feirão da Fartura</p>
-              <span class="bg-rose-50 text-rose-700 border border-rose-200/60 font-semibold text-[10px] px-1.5 py-0.5 rounded-full shrink-0">350m</span>
             </div>
-            <p class="text-xs text-slate-500 line-clamp-1">Frutas, legumes e verduras frescas</p>
-            <p class="text-[11px] text-slate-600 mt-1"><i class="fa-regular fa-clock mr-1 text-slate-400"></i>08:00 às 19:30</p>
+            <div class="flex items-center gap-2 shrink-0 ml-2">
+              <span class="bg-rose-50 text-rose-700 border border-rose-200/60 font-semibold text-[10px] px-1.5 py-0.5 rounded-full">350m</span>
+              <i class="fa-solid fa-chevron-down text-xs text-slate-400 group-open:rotate-180 transition-transform duration-200"></i>
+            </div>
+          </summary>
+          <div class="px-3 pb-3 pt-1 border-t border-slate-100 space-y-2 text-xs text-slate-600 bg-white">
+            <p>Frutas frescas, verduras, legumes e itens básicos de mercado.</p>
+            <p class="text-[11px] text-slate-500"><i class="fa-regular fa-clock mr-1 text-slate-400"></i>Horário: 08:00 às 19:30</p>
+            <a href="https://maps.app.goo.gl/oCsu9PDg2yxsFX9U6" target="_blank" 
+               class="inline-flex items-center gap-1.5 text-airbnb font-semibold hover:underline pt-1">
+              <span>Abrir no Google Maps</span>
+              <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+            </a>
           </div>
-          <i class="fa-solid fa-arrow-up-right-from-square text-xs text-slate-400 group-hover:text-rose-500 transition mr-1"></i>
-        </a>
+        </details>
 
         <!-- 4. Posto de Combustível -->
-        <a href="https://maps.app.goo.gl/wQzu39naX44YaCVx8" target="_blank" 
-           class="flex items-center gap-3 p-2.5 rounded-xl bg-slate-50 hover:bg-slate-100 transition border border-slate-100 group">
-          <img src="https://images.unsplash.com/photo-1527018601619-a508a2be00be?w=160&auto=format&fit=crop&q=80" 
-               alt="Posto de Gasolina" class="w-16 h-16 rounded-lg object-cover shrink-0 shadow-sm">
-          <div class="min-w-0 flex-1">
-            <div class="flex items-center justify-between gap-1 mb-0.5">
-              <p class="text-sm font-semibold text-slate-800 truncate">Posto de Combustível Shell</p>
-              <span class="bg-rose-50 text-rose-700 border border-rose-200/60 font-semibold text-[10px] px-1.5 py-0.5 rounded-full shrink-0">750m</span>
+        <details class="group bg-slate-50 rounded-xl border border-slate-200/80 overflow-hidden transition-all duration-200">
+          <summary class="flex items-center justify-between p-3 cursor-pointer list-none select-none hover:bg-slate-100/70 transition">
+            <div class="flex items-center gap-2.5 min-w-0">
+              <img src="https://images.unsplash.com/photo-1527018601619-a508a2be00be?w=100&auto=format&fit=crop&q=80" 
+                   alt="Posto de Gasolina" class="w-8 h-8 rounded-lg object-cover shrink-0 shadow-xs">
+              <p class="text-sm font-semibold text-slate-800 truncate">Posto Shell</p>
             </div>
-            <p class="text-xs text-slate-500 line-clamp-1">Abastecimento e conveniência</p>
-            <p class="text-[11px] text-slate-600 mt-1"><i class="fa-regular fa-clock mr-1 text-slate-400"></i>Aberto 24h / Diariamente</p>
+            <div class="flex items-center gap-2 shrink-0 ml-2">
+              <span class="bg-rose-50 text-rose-700 border border-rose-200/60 font-semibold text-[10px] px-1.5 py-0.5 rounded-full">750m</span>
+              <i class="fa-solid fa-chevron-down text-xs text-slate-400 group-open:rotate-180 transition-transform duration-200"></i>
+            </div>
+          </summary>
+          <div class="px-3 pb-3 pt-1 border-t border-slate-100 space-y-2 text-xs text-slate-600 bg-white">
+            <p>Abastecimento de combustíveis e loja de conveniência.</p>
+            <p class="text-[11px] text-slate-500"><i class="fa-regular fa-clock mr-1 text-slate-400"></i>Horário: Aberto 24h diariamente</p>
+            <a href="https://maps.app.goo.gl/wQzu39naX44YaCVx8" target="_blank" 
+               class="inline-flex items-center gap-1.5 text-airbnb font-semibold hover:underline pt-1">
+              <span>Abrir no Google Maps</span>
+              <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+            </a>
           </div>
-          <i class="fa-solid fa-arrow-up-right-from-square text-xs text-slate-400 group-hover:text-rose-500 transition mr-1"></i>
-        </a>
+        </details>
 
         <!-- 5. Supermercados BH -->
-        <a href="https://maps.google.com/?q=Supermercados+BH" target="_blank" 
-           class="flex items-center gap-3 p-2.5 rounded-xl bg-slate-50 hover:bg-slate-100 transition border border-slate-100 group">
-          <img src="https://images.unsplash.com/photo-1578916171728-46686eac8d58?w=160&auto=format&fit=crop&q=80" 
-               alt="Supermercados BH" class="w-16 h-16 rounded-lg object-cover shrink-0 shadow-sm">
-          <div class="min-w-0 flex-1">
-            <div class="flex items-center justify-between gap-1 mb-0.5">
+        <details class="group bg-slate-50 rounded-xl border border-slate-200/80 overflow-hidden transition-all duration-200">
+          <summary class="flex items-center justify-between p-3 cursor-pointer list-none select-none hover:bg-slate-100/70 transition">
+            <div class="flex items-center gap-2.5 min-w-0">
+              <img src="https://images.unsplash.com/photo-1578916171728-46686eac8d58?w=100&auto=format&fit=crop&q=80" 
+                   alt="Supermercados BH" class="w-8 h-8 rounded-lg object-cover shrink-0 shadow-xs">
               <p class="text-sm font-semibold text-slate-800 truncate">Supermercados BH</p>
-              <span class="bg-rose-50 text-rose-700 border border-rose-200/60 font-semibold text-[10px] px-1.5 py-0.5 rounded-full shrink-0">800m</span>
             </div>
-            <p class="text-xs text-slate-500 line-clamp-1">Supermercado completo da região</p>
-            <p class="text-[11px] text-slate-600 mt-1"><i class="fa-regular fa-clock mr-1 text-slate-400"></i>07:30 às 21:00 (Dom até 14h)</p>
+            <div class="flex items-center gap-2 shrink-0 ml-2">
+              <span class="bg-rose-50 text-rose-700 border border-rose-200/60 font-semibold text-[10px] px-1.5 py-0.5 rounded-full">800m</span>
+              <i class="fa-solid fa-chevron-down text-xs text-slate-400 group-open:rotate-180 transition-transform duration-200"></i>
+            </div>
+          </summary>
+          <div class="px-3 pb-3 pt-1 border-t border-slate-100 space-y-2 text-xs text-slate-600 bg-white">
+            <p>Supermercado grande e completo para compras do dia a dia e itens para o imóvel.</p>
+            <p class="text-[11px] text-slate-500"><i class="fa-regular fa-clock mr-1 text-slate-400"></i>Horário: 07:30 às 21:00 (Domingo até 14:00)</p>
+            <a href="https://maps.google.com/?q=Supermercados+BH" target="_blank" 
+               class="inline-flex items-center gap-1.5 text-airbnb font-semibold hover:underline pt-1">
+              <span>Abrir no Google Maps</span>
+              <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+            </a>
           </div>
-          <i class="fa-solid fa-arrow-up-right-from-square text-xs text-slate-400 group-hover:text-rose-500 transition mr-1"></i>
-        </a>
+        </details>
 
         <!-- 6. Padaria Pães de Minas -->
-        <a href="https://maps.app.goo.gl/R6DyXooJh94Ppugn8" target="_blank" 
-           class="flex items-center gap-3 p-2.5 rounded-xl bg-slate-50 hover:bg-slate-100 transition border border-slate-100 group">
-          <img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=160&auto=format&fit=crop&q=80" 
-               alt="Padaria Pães de Minas" class="w-16 h-16 rounded-lg object-cover shrink-0 shadow-sm">
-          <div class="min-w-0 flex-1">
-            <div class="flex items-center justify-between gap-1 mb-0.5">
+        <details class="group bg-slate-50 rounded-xl border border-slate-200/80 overflow-hidden transition-all duration-200">
+          <summary class="flex items-center justify-between p-3 cursor-pointer list-none select-none hover:bg-slate-100/70 transition">
+            <div class="flex items-center gap-2.5 min-w-0">
+              <img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=100&auto=format&fit=crop&q=80" 
+                   alt="Padaria Pães de Minas" class="w-8 h-8 rounded-lg object-cover shrink-0 shadow-xs">
               <p class="text-sm font-semibold text-slate-800 truncate">Padaria Pães de Minas</p>
-              <span class="bg-rose-50 text-rose-700 border border-rose-200/60 font-semibold text-[10px] px-1.5 py-0.5 rounded-full shrink-0">900m</span>
             </div>
-            <p class="text-xs text-slate-500 line-clamp-1">Café da manhã servido e buffet</p>
-            <p class="text-[11px] text-slate-600 mt-1"><i class="fa-regular fa-clock mr-1 text-slate-400"></i>06:00 às 21:00</p>
+            <div class="flex items-center gap-2 shrink-0 ml-2">
+              <span class="bg-rose-50 text-rose-700 border border-rose-200/60 font-semibold text-[10px] px-1.5 py-0.5 rounded-full">900m</span>
+              <i class="fa-solid fa-chevron-down text-xs text-slate-400 group-open:rotate-180 transition-transform duration-200"></i>
+            </div>
+          </summary>
+          <div class="px-3 pb-3 pt-1 border-t border-slate-100 space-y-2 text-xs text-slate-600 bg-white">
+            <p>Excelente estrutura com buffet de café da manhã e lanches servidos.</p>
+            <p class="text-[11px] text-slate-500"><i class="fa-regular fa-clock mr-1 text-slate-400"></i>Horário: 06:00 às 21:00</p>
+            <a href="https://maps.app.goo.gl/R6DyXooJh94Ppugn8" target="_blank" 
+               class="inline-flex items-center gap-1.5 text-airbnb font-semibold hover:underline pt-1">
+              <span>Abrir no Google Maps</span>
+              <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+            </a>
           </div>
-          <i class="fa-solid fa-arrow-up-right-from-square text-xs text-slate-400 group-hover:text-rose-500 transition mr-1"></i>
-        </a>
+        </details>
 
         <!-- 7. Metrô Cidade Industrial -->
-        <a href="https://maps.app.goo.gl/KMWKco4d17SWzipu8" target="_blank" 
-           class="flex items-center gap-3 p-2.5 rounded-xl bg-slate-50 hover:bg-slate-100 transition border border-slate-100 group">
-          <img src="https://images.unsplash.com/photo-1474487548417-781cb71495f3?w=160&auto=format&fit=crop&q=80" 
-               alt="Estação Cidade Industrial" class="w-16 h-16 rounded-lg object-cover shrink-0 shadow-sm">
-          <div class="min-w-0 flex-1">
-            <div class="flex items-center justify-between gap-1 mb-0.5">
-              <p class="text-sm font-semibold text-slate-800 truncate">Estação de Metrô - Cidade Industrial</p>
-              <span class="bg-blue-50 text-blue-700 border border-blue-200/60 font-semibold text-[10px] px-1.5 py-0.5 rounded-full shrink-0">1,1 km</span>
+        <details class="group bg-slate-50 rounded-xl border border-slate-200/80 overflow-hidden transition-all duration-200">
+          <summary class="flex items-center justify-between p-3 cursor-pointer list-none select-none hover:bg-slate-100/70 transition">
+            <div class="flex items-center gap-2.5 min-w-0">
+              <img src="https://images.unsplash.com/photo-1474487548417-781cb71495f3?w=100&auto=format&fit=crop&q=80" 
+                   alt="Estação Cidade Industrial" class="w-8 h-8 rounded-lg object-cover shrink-0 shadow-xs">
+              <p class="text-sm font-semibold text-slate-800 truncate">Metrô Cidade Industrial</p>
             </div>
-            <p class="text-xs text-slate-500 line-clamp-1">Linha 1 do Metrô</p>
-            <p class="text-[11px] text-slate-600 mt-1"><i class="fa-regular fa-clock mr-1 text-slate-400"></i>05:15 às 23:00</p>
+            <div class="flex items-center gap-2 shrink-0 ml-2">
+              <span class="bg-blue-50 text-blue-700 border border-blue-200/60 font-semibold text-[10px] px-1.5 py-0.5 rounded-full">1,1 km</span>
+              <i class="fa-solid fa-chevron-down text-xs text-slate-400 group-open:rotate-180 transition-transform duration-200"></i>
+            </div>
+          </summary>
+          <div class="px-3 pb-3 pt-1 border-t border-slate-100 space-y-2 text-xs text-slate-600 bg-white">
+            <p>Estação da Linha 1 do metrô. Acesso rápido e direto ao Centro e outras regiões de BH.</p>
+            <p class="text-[11px] text-slate-500"><i class="fa-regular fa-clock mr-1 text-slate-400"></i>Funcionamento: 05:15 às 23:00</p>
+            <a href="https://maps.app.goo.gl/KMWKco4d17SWzipu8" target="_blank" 
+               class="inline-flex items-center gap-1.5 text-airbnb font-semibold hover:underline pt-1">
+              <span>Abrir no Google Maps</span>
+              <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+            </a>
           </div>
-          <i class="fa-solid fa-arrow-up-right-from-square text-xs text-slate-400 group-hover:text-rose-500 transition mr-1"></i>
-        </a>
+        </details>
 
         <!-- 8. Metrô Eldorado -->
-        <a href="https://maps.app.goo.gl/Eou4CtJ8WgPVPK1S9" target="_blank" 
-           class="flex items-center gap-3 p-2.5 rounded-xl bg-slate-50 hover:bg-slate-100 transition border border-slate-100 group">
-          <img src="https://images.unsplash.com/photo-1541888946425-d0fbb186f5f8?w=160&auto=format&fit=crop&q=80" 
-               alt="Estação Eldorado" class="w-16 h-16 rounded-lg object-cover shrink-0 shadow-sm">
-          <div class="min-w-0 flex-1">
-            <div class="flex items-center justify-between gap-1 mb-0.5">
-              <p class="text-sm font-semibold text-slate-800 truncate">Estação de Metrô - Eldorado</p>
-              <span class="bg-blue-50 text-blue-700 border border-blue-200/60 font-semibold text-[10px] px-1.5 py-0.5 rounded-full shrink-0">1,8 km</span>
+        <details class="group bg-slate-50 rounded-xl border border-slate-200/80 overflow-hidden transition-all duration-200">
+          <summary class="flex items-center justify-between p-3 cursor-pointer list-none select-none hover:bg-slate-100/70 transition">
+            <div class="flex items-center gap-2.5 min-w-0">
+              <img src="https://images.unsplash.com/photo-1541888946425-d0fbb186f5f8?w=100&auto=format&fit=crop&q=80" 
+                   alt="Estação Eldorado" class="w-8 h-8 rounded-lg object-cover shrink-0 shadow-xs">
+              <p class="text-sm font-semibold text-slate-800 truncate">Metrô Eldorado</p>
             </div>
-            <p class="text-xs text-slate-500 line-clamp-1">Linha 1 do Metrô</p>
-            <p class="text-[11px] text-slate-600 mt-1"><i class="fa-regular fa-clock mr-1 text-slate-400"></i>05:15 às 23:00</p>
+            <div class="flex items-center gap-2 shrink-0 ml-2">
+              <span class="bg-blue-50 text-blue-700 border border-blue-200/60 font-semibold text-[10px] px-1.5 py-0.5 rounded-full">1,8 km</span>
+              <i class="fa-solid fa-chevron-down text-xs text-slate-400 group-open:rotate-180 transition-transform duration-200"></i>
+            </div>
+          </summary>
+          <div class="px-3 pb-3 pt-1 border-t border-slate-100 space-y-2 text-xs text-slate-600 bg-white">
+            <p>Terminal de integração metropolitana com linhas de ônibus e metrô da Linha 1.</p>
+            <p class="text-[11px] text-slate-500"><i class="fa-regular fa-clock mr-1 text-slate-400"></i>Funcionamento: 05:15 às 23:00</p>
+            <a href="https://maps.app.goo.gl/Eou4CtJ8WgPVPK1S9" target="_blank" 
+               class="inline-flex items-center gap-1.5 text-airbnb font-semibold hover:underline pt-1">
+              <span>Abrir no Google Maps</span>
+              <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+            </a>
           </div>
-          <i class="fa-solid fa-arrow-up-right-from-square text-xs text-slate-400 group-hover:text-rose-500 transition mr-1"></i>
-        </a>
+        </details>
 
         <!-- 9. ItaúPower Shopping -->
-        <a href="https://maps.app.goo.gl/RzxiHKUEp22PxQ7x9" target="_blank" 
-           class="flex items-center gap-3 p-2.5 rounded-xl bg-slate-50 hover:bg-slate-100 transition border border-slate-100 group">
-          <img src="https://images.unsplash.com/photo-1519567241046-7f570eee3ce6?w=160&auto=format&fit=crop&q=80" 
-               alt="ItaúPower Shopping" class="w-16 h-16 rounded-lg object-cover shrink-0 shadow-sm">
-          <div class="min-w-0 flex-1">
-            <div class="flex items-center justify-between gap-1 mb-0.5">
+        <details class="group bg-slate-50 rounded-xl border border-slate-200/80 overflow-hidden transition-all duration-200">
+          <summary class="flex items-center justify-between p-3 cursor-pointer list-none select-none hover:bg-slate-100/70 transition">
+            <div class="flex items-center gap-2.5 min-w-0">
+              <img src="https://images.unsplash.com/photo-1519567241046-7f570eee3ce6?w=100&auto=format&fit=crop&q=80" 
+                   alt="ItaúPower Shopping" class="w-8 h-8 rounded-lg object-cover shrink-0 shadow-xs">
               <p class="text-sm font-semibold text-slate-800 truncate">ItaúPower Shopping</p>
-              <span class="bg-purple-50 text-purple-700 border border-purple-200/60 font-semibold text-[10px] px-1.5 py-0.5 rounded-full shrink-0">2,6 km</span>
             </div>
-            <p class="text-xs text-slate-500 line-clamp-1">Alimentação, cinema, lojas e serviços</p>
-            <p class="text-[11px] text-slate-600 mt-1"><i class="fa-regular fa-clock mr-1 text-slate-400"></i>10:00 às 22:00 (Dom 14h-20h)</p>
+            <div class="flex items-center gap-2 shrink-0 ml-2">
+              <span class="bg-purple-50 text-purple-700 border border-purple-200/60 font-semibold text-[10px] px-1.5 py-0.5 rounded-full">2,6 km</span>
+              <i class="fa-solid fa-chevron-down text-xs text-slate-400 group-open:rotate-180 transition-transform duration-200"></i>
+            </div>
+          </summary>
+          <div class="px-3 pb-3 pt-1 border-t border-slate-100 space-y-2 text-xs text-slate-600 bg-white">
+            <p>Praça de alimentação completa, cinemas, diversas lojas de departamentos e serviços.</p>
+            <p class="text-[11px] text-slate-500"><i class="fa-regular fa-clock mr-1 text-slate-400"></i>Horário: 10:00 às 22:00 (Domingo: 14:00 às 20:00)</p>
+            <a href="https://maps.app.goo.gl/RzxiHKUEp22PxQ7x9" target="_blank" 
+               class="inline-flex items-center gap-1.5 text-airbnb font-semibold hover:underline pt-1">
+              <span>Abrir no Google Maps</span>
+              <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+            </a>
           </div>
-          <i class="fa-solid fa-arrow-up-right-from-square text-xs text-slate-400 group-hover:text-rose-500 transition mr-1"></i>
-        </a>
+        </details>
 
-        <!-- 10. Academia (Opção 1) -->
-        <a href="https://maps.app.goo.gl/9wA7a7uNUUD3iC1NA" target="_blank" 
-           class="flex items-center gap-3 p-2.5 rounded-xl bg-slate-50 hover:bg-slate-100 transition border border-slate-100 group">
-          <img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=160&auto=format&fit=crop&q=80" 
-               alt="Academia" class="w-16 h-16 rounded-lg object-cover shrink-0 shadow-sm">
-          <div class="min-w-0 flex-1">
-            <div class="flex items-center justify-between gap-1 mb-0.5">
-              <p class="text-sm font-semibold text-slate-800 truncate">Academia (Dreamfit)</p>
-              <span class="bg-rose-50 text-rose-700 border border-rose-200/60 font-semibold text-[10px] px-1.5 py-0.5 rounded-full shrink-0">500m</span>
+        <!-- 10. Academia Dreamfit -->
+        <details class="group bg-slate-50 rounded-xl border border-slate-200/80 overflow-hidden transition-all duration-200">
+          <summary class="flex items-center justify-between p-3 cursor-pointer list-none select-none hover:bg-slate-100/70 transition">
+            <div class="flex items-center gap-2.5 min-w-0">
+              <img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=100&auto=format&fit=crop&q=80" 
+                   alt="Academia Dreamfit" class="w-8 h-8 rounded-lg object-cover shrink-0 shadow-xs">
+              <p class="text-sm font-semibold text-slate-800 truncate">Academia Dreamfit</p>
             </div>
-            <p class="text-xs text-slate-500 line-clamp-1">Gympass/Wellhub plano Basic</p>
-            <p class="text-[11px] text-slate-600 mt-1"><i class="fa-regular fa-clock mr-1 text-slate-400"></i>06:00 às 22:00</p>
+            <div class="flex items-center gap-2 shrink-0 ml-2">
+              <span class="bg-rose-50 text-rose-700 border border-rose-200/60 font-semibold text-[10px] px-1.5 py-0.5 rounded-full">500m</span>
+              <i class="fa-solid fa-chevron-down text-xs text-slate-400 group-open:rotate-180 transition-transform duration-200"></i>
+            </div>
+          </summary>
+          <div class="px-3 pb-3 pt-1 border-t border-slate-100 space-y-2 text-xs text-slate-600 bg-white">
+            <p>Musculação e aeróbico. Aceita Wellhub (Gympass) a partir do plano <strong>Basic</strong>.</p>
+            <p class="text-[11px] text-slate-500"><i class="fa-regular fa-clock mr-1 text-slate-400"></i>Horário: 06:00 às 22:00</p>
+            <a href="https://maps.app.goo.gl/9wA7a7uNUUD3iC1NA" target="_blank" 
+               class="inline-flex items-center gap-1.5 text-airbnb font-semibold hover:underline pt-1">
+              <span>Abrir no Google Maps</span>
+              <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+            </a>
           </div>
-          <i class="fa-solid fa-arrow-up-right-from-square text-xs text-slate-400 group-hover:text-rose-500 transition mr-1"></i>
-        </a>
+        </details>
 
-        <!-- 11. Academia (Opção 2) -->
-        <a href="https://maps.app.goo.gl/isSyJws9fQp4ku2WA" target="_blank" 
-           class="flex items-center gap-3 p-2.5 rounded-xl bg-slate-50 hover:bg-slate-100 transition border border-slate-100 group">
-          <img src="https://images.unsplash.com/photo-1571902943202-507ec2618e8f?w=160&auto=format&fit=crop&q=80" 
-               alt="Academia" class="w-16 h-16 rounded-lg object-cover shrink-0 shadow-sm">
-          <div class="min-w-0 flex-1">
-            <div class="flex items-center justify-between gap-1 mb-0.5">
-              <p class="text-sm font-semibold text-slate-800 truncate">Academia (Pratique Fitness)</p>
-              <span class="bg-rose-50 text-rose-700 border border-rose-200/60 font-semibold text-[10px] px-1.5 py-0.5 rounded-full shrink-0">800m</span>
+        <!-- 11. Academia Pratique Fitness -->
+        <details class="group bg-slate-50 rounded-xl border border-slate-200/80 overflow-hidden transition-all duration-200">
+          <summary class="flex items-center justify-between p-3 cursor-pointer list-none select-none hover:bg-slate-100/70 transition">
+            <div class="flex items-center gap-2.5 min-w-0">
+              <img src="https://images.unsplash.com/photo-1571902943202-507ec2618e8f?w=100&auto=format&fit=crop&q=80" 
+                   alt="Academia Pratique Fitness" class="w-8 h-8 rounded-lg object-cover shrink-0 shadow-xs">
+              <p class="text-sm font-semibold text-slate-800 truncate">Pratique Fitness</p>
             </div>
-            <p class="text-xs text-slate-500 line-clamp-1">Gympass/Wellhub plano Silver</p>
-            <p class="text-[11px] text-slate-600 mt-1"><i class="fa-regular fa-clock mr-1 text-slate-400"></i>06:00 às 22:00</p>
+            <div class="flex items-center gap-2 shrink-0 ml-2">
+              <span class="bg-rose-50 text-rose-700 border border-rose-200/60 font-semibold text-[10px] px-1.5 py-0.5 rounded-full">800m</span>
+              <i class="fa-solid fa-chevron-down text-xs text-slate-400 group-open:rotate-180 transition-transform duration-200"></i>
+            </div>
+          </summary>
+          <div class="px-3 pb-3 pt-1 border-t border-slate-100 space-y-2 text-xs text-slate-600 bg-white">
+            <p>Unidade ampla com musculação e aulas coletivas. Aceita Wellhub (Gympass) a partir do plano <strong>Silver</strong>.</p>
+            <p class="text-[11px] text-slate-500"><i class="fa-regular fa-clock mr-1 text-slate-400"></i>Horário: 06:00 às 22:00</p>
+            <a href="https://maps.app.goo.gl/isSyJws9fQp4ku2WA" target="_blank" 
+               class="inline-flex items-center gap-1.5 text-airbnb font-semibold hover:underline pt-1">
+              <span>Abrir no Google Maps</span>
+              <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+            </a>
           </div>
-          <i class="fa-solid fa-arrow-up-right-from-square text-xs text-slate-400 group-hover:text-rose-500 transition mr-1"></i>
-        </a>
+        </details>
 
       </div>
     </section>
