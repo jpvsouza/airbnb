@@ -1,6 +1,5 @@
 const CSV_URL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vRVpZ_M7Dt_kTC-gSUoL7saEfC3RFe-VfiKV4mPHlBntir_NUh9NU2xUbqcPJUnEreDxjGHjiHU4d7E/pub?gid=2120332944&single=true&output=csv";
 
-// Função para fazer o parse correto de CSV respeitando quebras de linha e vírgulas entre aspas
 function parseCSV(text) {
   const linhas = [];
   let linhaAtual = [];
@@ -58,9 +57,7 @@ async function carregarDadosAcomodacao() {
 
     const cabecalho = matriz[0].map(col => col.toLowerCase().trim());
     const idIdx = cabecalho.indexOf('id');
-    const statusIdx = cabecalho.indexOf('status');
 
-    // Localiza a linha correspondente
     const linha = matriz.slice(1).find(row => {
       const celulaId = (row[idIdx] || '').trim();
       return celulaId === idProcurado.trim() || celulaId.startsWith(idProcurado.trim());
@@ -76,26 +73,22 @@ async function carregarDadosAcomodacao() {
       dados[col] = linha[idx] || '';
     });
 
-    // Se não estiver publicado
     if (dados.status !== 'PUBLICADO') {
       mostrarMensagem("Guia em Preparação", "O manual desta acomodação ainda está sendo aprovado e configurado pelo anfitrião.");
       return;
     }
 
-    // Preenche as informações na tela
+    // Preenchimento dos dados na página
     document.title = `${dados.accommodation_name || 'Manual'} | Guia do Hóspede`;
 
-    // Título da Acomodação
     const elNomeAcomodacao = document.getElementById('nome-acomodacao');
     if (elNomeAcomodacao && dados.accommodation_name) elNomeAcomodacao.textContent = dados.accommodation_name;
 
-    // Wi-Fi
     const elWifiSsid = document.getElementById('wifi-ssid');
     const elWifiPass = document.getElementById('wifi-pass');
     if (elWifiSsid && dados.wifi_ssid) elWifiSsid.textContent = dados.wifi_ssid;
     if (elWifiPass && dados.wifi_pass) elWifiPass.textContent = dados.wifi_pass;
 
-    // Botão WhatsApp Host
     const elBtnWhats = document.getElementById('btn-whatsapp');
     if (elBtnWhats && dados.host_whatsapp) {
       const telDigitos = dados.host_whatsapp.replace(/\D/g, '');
@@ -105,20 +98,53 @@ async function carregarDadosAcomodacao() {
       elBtnWhats.innerHTML = `<i class="fa-brands fa-whatsapp text-sm"></i> Falar com ${nomeHost}`;
     }
 
-    // Horários Check-in / Check-out
     const elCheckin = document.getElementById('horario-checkin');
     const elCheckout = document.getElementById('horario-checkout');
     if (elCheckin && dados.checkin_time) elCheckin.textContent = dados.checkin_time;
     if (elCheckout && dados.checkout_time) elCheckout.textContent = dados.checkout_time;
 
-    // Regras da Casa
-    const elRegras = document.getElementById('lista-regras');
-    if (elRegras && dados.house_rules) {
-      elRegras.innerHTML = dados.house_rules
-        .split('\n')
-        .filter(r => r.trim().length > 0)
-        .map(r => `<li class="flex items-start gap-2"><i class="fa-solid fa-circle-check text-rose-500 mt-1 text-xs"></i><span>${r}</span></li>`)
-        .join('');
+    // Renderizar Dicas da Região dinâmicas (Google Maps)
+    const containerDicas = document.getElementById('container-dicas');
+    const textoDicas = dados.dicas_regiao || dados['links e dicas da região (google maps)'] || '';
+
+    if (containerDicas) {
+      if (!textoDicas.trim()) {
+        containerDicas.innerHTML = `<p class="text-xs text-slate-400">Consulte o anfitrião para recomendações locais.</p>`;
+      } else {
+        const itens = textoDicas.split('\n').filter(i => i.trim().length > 0);
+        
+        containerDicas.innerHTML = itens.map(item => {
+          // Extrai o link do Google Maps da linha
+          const matchUrl = item.match(/(https?:\/\/[^\s]+)/gi);
+          const linkUrl = matchUrl ? matchUrl[0] : null;
+          
+          // Remove a URL para obter o texto descritivo
+          let texto = item.replace(linkUrl || '', '').replace(/^[•\-\*]\s*/, '').trim();
+          if (!texto && linkUrl) texto = "Local Recomendado";
+
+          return `
+            <details class="group bg-slate-50 rounded-xl border border-slate-200/80 overflow-hidden transition-all duration-200">
+              <summary class="flex items-center justify-between p-3 cursor-pointer list-none select-none hover:bg-slate-100/70 transition">
+                <div class="flex items-center gap-2.5 min-w-0">
+                  <div class="w-8 h-8 rounded-lg bg-rose-50 text-airbnb flex items-center justify-center text-sm shrink-0">
+                    <i class="fa-solid fa-location-dot"></i>
+                  </div>
+                  <p class="text-sm font-semibold text-slate-800 truncate">${texto}</p>
+                </div>
+                <i class="fa-solid fa-chevron-down text-xs text-slate-400 group-open:rotate-180 transition-transform duration-200"></i>
+              </summary>
+              <div class="px-3 pb-3 pt-1 border-t border-slate-100 space-y-2 text-xs text-slate-600 bg-white">
+                ${linkUrl ? `
+                  <a href="${linkUrl}" target="_blank" class="inline-flex items-center gap-1.5 text-airbnb font-semibold hover:underline pt-1">
+                    <span>Abrir no Google Maps</span>
+                    <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+                  </a>
+                ` : `<p class="text-slate-400">Endereço sob consulta com o anfitrião.</p>`}
+              </div>
+            </details>
+          `;
+        }).join('');
+      }
     }
 
   } catch (err) {
