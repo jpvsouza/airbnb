@@ -1,9 +1,21 @@
 <!DOCTYPE html>
-<html lang="pt-BR" class="scroll-smooth">
+<html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Guia do Hóspede | Manual da Casa</title>
+
+  <!-- Garante o Scroll Suave nativo sem depender do carregamento do Tailwind -->
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+    /* Compensa a altura do menu fixo para o topo da seção não ficar escondido */
+    section[id] {
+      scroll-margin-top: 4.5rem;
+    }
+  </style>
+
   <!-- Tailwind CSS via CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
   <!-- Font Awesome para ícones -->
@@ -29,10 +41,10 @@
         <i class="fa-solid fa-house-chimney text-airbnb text-xl"></i>
         <h1 class="font-bold text-lg text-slate-900">Manual da Casa</h1>
       </div>
-      <a href="https://wa.me/5531975138737?text=Ol%C3%A1%2C%20Andrezza!%20Sou%20h%C3%B3spede%20do%20Airbnb%20e%20preciso%20de%20ajuda" 
+      <a id="btn-whatsapp" href="https://wa.me/5531975138737?text=Ol%C3%A1%2C%20Andrezza!%20Sou%20h%C3%B3spede%20do%20Airbnb%20e%20preciso%20de%20ajuda" 
          target="_blank" 
          class="bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-semibold px-3 py-1.5 rounded-full flex items-center gap-1.5 transition">
-        <i class="fa-brands fa-whatsapp text-sm"></i> Falar com Andrezza
+        <i class="fa-brands fa-whatsapp text-sm"></i> Falar com Host
       </a>
     </div>
   </header>
@@ -42,18 +54,18 @@
     <!-- Card de Boas-Vindas & Wi-Fi -->
     <div class="bg-gradient-to-br from-rose-500 to-rose-600 rounded-2xl p-5 text-white shadow-md">
       <span class="text-xs font-semibold tracking-wider uppercase opacity-90">Bem-vindo(a)!</span>
-      <h2 class="text-xl font-bold mt-1 mb-4">AP dos Lindos</h2>
+      <h2 id="nome-acomodacao" class="text-xl font-bold mt-1 mb-4">Carregando acomodação...</h2>
 
       <!-- Box Wi-Fi com Copiar Senha -->
       <div class="bg-white/15 backdrop-blur-sm rounded-xl p-3.5 border border-white/20 space-y-2">
         <div class="flex justify-between items-center text-sm">
           <span class="opacity-90"><i class="fa-solid fa-wifi mr-1.5"></i> Rede:</span>
-          <span class="font-semibold" id="wifi-ssid">AP_dos_lindos_5G</span>
+          <span class="font-semibold" id="wifi-ssid">Carregando...</span>
         </div>
         <div class="flex justify-between items-center text-sm pt-1 border-t border-white/20">
           <span class="opacity-90"><i class="fa-solid fa-key mr-1.5"></i> Senha:</span>
           <div class="flex items-center gap-2">
-            <code class="font-mono bg-black/20 px-2 py-0.5 rounded text-xs" id="wifi-pass">internetrapida</code>
+            <code class="font-mono bg-black/20 px-2 py-0.5 rounded text-xs" id="wifi-pass">...</code>
             <button onclick="copiarSenha()" class="bg-white text-rose-600 text-xs px-2 py-1 rounded font-medium hover:bg-rose-50 transition active:scale-95">
               Copiar
             </button>
@@ -132,11 +144,11 @@
       <div class="grid grid-cols-2 gap-3 text-sm">
         <div class="bg-slate-50 p-3 rounded-xl border border-slate-100">
           <span class="text-xs text-slate-500 font-medium block">Check-in</span>
-          <span class="font-bold text-slate-900">A partir das 15:00</span>
+          <span id="horario-checkin" class="font-bold text-slate-900">A partir das 15:00</span>
         </div>
         <div class="bg-slate-50 p-3 rounded-xl border border-slate-100">
           <span class="text-xs text-slate-500 font-medium block">Check-out</span>
-          <span class="font-bold text-slate-900">Até as 12:00</span>
+          <span id="horario-checkout" class="font-bold text-slate-900">Até as 12:00</span>
         </div>
       </div>
 
@@ -166,7 +178,6 @@
         </summary>
         
         <div class="px-3.5 pb-3.5 pt-2 border-t border-slate-100 space-y-3.5 text-xs text-slate-600 bg-white">
-          
           <!-- Opção: Com Veículo -->
           <div class="space-y-1.5 p-3 rounded-lg bg-slate-50 border border-slate-100">
             <div class="flex items-center gap-1.5 font-bold text-slate-800 text-xs">
@@ -201,10 +212,8 @@
               </li>
             </ol>
           </div>
-
         </div>
       </details>
-
     </section>
 
     <!-- Seção: Uso de Aparelhos -->
@@ -220,7 +229,7 @@
             <i class="fa-solid fa-chevron-down text-xs text-slate-400 group-open:rotate-180 transition"></i>
           </summary>
           <p class="mt-2 text-xs text-slate-600 leading-relaxed">
-            Caso o chuveiro esteja frio, o disjuntor pode ter caído e é só ligar novamente no quadro que fica na cozinha. Se não sair água, pode ser que o registro geral tenha sido fechado por engano
+            Caso o chuveiro esteja frio, o disjuntor pode ter caído e é só ligar novamente no quadro que fica na cozinha. Se não sair água, pode ser que o registro geral tenha sido fechado por engano.
           </p>
         </details>
         <details class="group bg-slate-50 p-3 rounded-xl border border-slate-100">
@@ -241,7 +250,7 @@
         <i class="fa-solid fa-circle-exclamation text-airbnb"></i>
         <h3>Regras Importantes</h3>
       </div>
-      <ul class="text-xs text-slate-600 space-y-2">
+      <ul id="lista-regras" class="text-xs text-slate-600 space-y-2">
         <li class="flex items-start gap-2">
           <i class="fa-solid fa-ban text-rose-500 mt-0.5"></i>
           <span><strong>Não fumar:</strong> Estritamente proibido fumar dentro do apartamento ou na janela.</span>
@@ -265,7 +274,6 @@
       </div>
       
       <div class="space-y-2">
-
         <!-- 1. Padaria dos Rocha -->
         <details class="group bg-slate-50 rounded-xl border border-slate-200/80 overflow-hidden transition-all duration-200">
           <summary class="flex items-center justify-between p-3 cursor-pointer list-none select-none hover:bg-slate-100/70 transition">
@@ -529,12 +537,12 @@
             </a>
           </div>
         </details>
-
       </div>
     </section>
 
   </main>
 
+  <!-- Lógica de Copiar Senha -->
   <script>
     function copiarSenha() {
       const senha = document.getElementById('wifi-pass').innerText;
@@ -547,8 +555,8 @@
       });
     }
   </script>
-  
-  <!-- Script que carrega os dados dinâmicos da planilha -->
+
+  <!-- Script que carrega os dados dinâmicos da planilha via URL ?id=... -->
   <script src="script.js"></script>
 </body>
 </html>
